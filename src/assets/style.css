@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+  }
+  * a {
+    text-decoration: none;
+  }
+  * li {
+    list-style: none;
+  }
+  .container {
+    min-height: 120vh;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .bg::after {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    filter: brightness(45%);
+    background-image: url('https://img.freepik.com/free-vector/gradient-background-green-tones_23-2148374530.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .navBar {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    height: 15vh;
+  }
+  .navBar ul {
+    display: flex;
+    align-items: center;
+  }
+  .navBar ul li {
+    padding: 0 25px;
+  }
+  .navBar ul li a {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+  }
+  .navBar .logo a {
+    font-size: 2.3rem;
+    color: #fff;
+  }
+  .content{
+    width: 85%;
+    margin: auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+  }
+  .content .bank,.card{
+    width: 50%;
+    position: relative;
+    padding: 40px;
+  }
+  .content .bank{
+    color: #fff;
+  }
+  .content .bank h2{
+    font-size: 3rem;
+  }
+  .content .bank h2 i{
+    color: orange;
+  }
+  .content .bank h1{
+    font-size: 4rem;
+  }
+  .content .bank p{
+    opacity:.6;
+    margin: 6px;
+  }
+  .card{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap:25px;
+  }
+  .card .box{
+    width: 100%;
+    height: 230px;
+    background: rgb(190, 187, 187);
+    background-position: center;
+    background-size: cover;
+  }
+  .card .box h2{
+    color: #fff;
+  }
+  .bg1{
+    background-image:url() ;
+  }
+
+  .navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    
+  }
+  .navigation a::after {
+    content: '';
+    position: absolute;
+    left:0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+    
+  }
+  .navigation a:hover::after {
+    transform: scaleX(1);
+  }
+  .navigation .btnLogin-popup {
+    color: #fff;
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid#fff;
+    font-size: 1.1em;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+  }
+  .navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: cadetblue;
+  }
+  .wrapper {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: height .2s ease;
+  }
+  .wrapper.active-popup{
+    transform: scale(1);
+    position: absolute;
+    top: 20%;
+    left: 40%;
+  }
+  .wrapper.active{
+    height: 520px;
+  }
+  .wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+  }
+  .wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+  }
+  .wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+  }
+  .wrapper .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+  }
+  .wrapper.active .form-box.register{
+    transition: tranform .18s ease;
+    transform: translateX(0);
+  }
+  .wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    font-size: 2em;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .form-box h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+  }
+.input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #002717;
+  margin: 30px 0;
+}
+.input-box label {
+  position: absolute;
+  top: 60%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #002717;
+  font-weight: 500;
+  pointer-events: none;
+  transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label {
+  top: -5px;
+
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #000000;
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: #000000;
+  line-height: 57px;
+} 
+.remember-forgot {
+  font-size: .9em;
+  color: #000000;
+  font-weight: 500;
+  margin: 15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.remember-forgot label input {
+  accent-color: #000000;
+  margin-right: 3px;
+
+}
+.remember-forgot a {
+  color: #000000;
+  text-decoration: none;
+}
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+.btn {
+  width: 100%;
+  height: 45px;
+  background: #17b948;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #070000;
+  font-weight: 500;
+}
+.login-register {
+  font-size: .9em;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+.login-register p a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-register p a:hover {
+  text-decoration: underline;
+}
